@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Na Na Song Player</title>
+  <style>
+    table {
+      width: 60%;
+      margin: 40px auto;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    td {
+      padding: 20px;
+      border: 2px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #f9c;
+      border: none;
+      border-radius: 8px;
+    }
+    button:hover {
+      background-color: #f39;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">🎶 Na Na Song Player 🎶</h2>
+
+  <table>
+    <tr>
+      <td>
+        <button onclick="document.getElementById('na1').play()">Na 🎵</button>
+        <audio id="na1" src="na1.mp3"></audio>
+      </td>
+      <td>
+        <button onclick="document.getElementById('na2').play()">Na Na 🎶</button>
+        <audio id="na2" src="na2.mp3"></audio>
+      </td>
+      <td>
+        <button onclick="document.getElementById('na3').play()">Na Na Na 🎼</button>
+        <audio id="na3" src="na3.mp3"></audio>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="document.getElementById('chorus').play()">Chorus 🔁</button>
+        <audio id="chorus" src="chorus.mp3"></audio>
+      </td>
+      <td>
+        <button onclick="document.getElementById('na4').play()">High Na 🎤</button>
+        <audio id="na4" src="na4.mp3"></audio>
+      </td>
+      <td>
+        <button onclick="document.getElementById('na5').play()">Low Na 🎧</button>
+        <audio id="na5" src="na5.mp3"></audio>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

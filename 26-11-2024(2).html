@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookmarking App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 40px;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      margin-bottom: 30px;
+    }
+    input {
+      padding: 10px;
+      margin: 5px;
+      width: 250px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #5cb85c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: white;
+      padding: 15px;
+      margin: 10px auto;
+      width: 50%;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .delete {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔖 Bookmark Manager</h1>
+
+  <form id="bookmarkForm">
+    <input type="text" id="siteName" placeholder="Website Name" required>
+    <input type="url" id="siteURL" placeholder="https://example.com" required>
+    <button type="submit">Add Bookmark</button>
+  </form>
+
+  <ul id="bookmarkList"></ul>
+
+  <script>
+    const form = document.getElementById('bookmarkForm');
+    const list = document.getElementById('bookmarkList');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('siteName').value.trim();
+      const url = document.getElementById('siteURL').value.trim();
+
+      if (!name || !url) return;
+
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span><a href="${url}" target="_blank">${name}</a></span>
+        <button class="delete">Delete</button>
+      `;
+
+      list.appendChild(li);
+
+      form.reset();
+    });
+
+    list.addEventListener('click', function(e) {
+      if (e.target.classList.contains('delete')) {
+        e.target.parentElement.remove();
+      }
+    });
+  </script>
+
+</body>
+</html>
